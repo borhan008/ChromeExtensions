@@ -1,0 +1,33 @@
+{
+    "name" : "Bangla Dictionary",
+    "description" : "English to Bangla Dictionary. Just double-click on a text and get it meaning in Bangla/Bengali.",
+    "version" : "1.1",
+    "permissions" : ["contextMenus", "activeTab"],
+    "background" : {
+
+        "scripts" : ["script/background.js"]
+    },
+    "manifest_version" : 2,
+    "content_scripts" : [
+        {
+            "matches" : ["<all_urls>"],
+            "js" : ["script/main.js"]
+        }
+    ],
+    "browser_action" : {
+        "default_title" : "Title",
+        "default_popup" : "html/index.html"
+    },
+    "web_accessible_resources": [
+        "json/E2Bdatabase.json",
+        "json/BengaliDictionary.json"
+        
+      ],
+      "icons": {
+        "16": "img/icon16.png",
+        "32": "img/icon32.png",
+        "48": "img/icon48.png",
+        "128": "img/icon128.png"
+      }
+    
+}
